@@ -1,0 +1,32 @@
+.toolbar {
+  height: 48px;
+  margin-top: -48px;
+}
+.sidebar {
+  width: 128px;
+  min-height: 100%;
+}
+.draw {
+  min-height: 100%;
+  width: 100%;
+}
+html {
+  height: 100%;
+}
+html body {
+  height: 100%;
+  margin: 0;
+}
+html body .onion {
+  bottom: 0;
+  left: 0;
+  padding-top: 48px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+html body .onion .columns {
+  display: flex;
+  flex-direction: rows;
+  min-height: 100%;
+}

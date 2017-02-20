@@ -1,0 +1,26 @@
+$toolbarHeight = 48
+$sidebarWidth = 128
+
+@import "./toolbar.styl"
+@import "./sidebar.styl"
+@import "./draw.styl"
+
+html
+  height: 100%
+
+  body
+    height: 100%
+    margin: 0
+
+    .onion
+      bottom: 0
+      left: 0
+      padding-top: ($toolbarHeight)px
+      position: absolute
+      right: 0
+      top: 0
+      
+      .columns
+        display: flex
+        flex-direction: rows
+        min-height: 100%

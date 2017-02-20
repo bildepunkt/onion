@@ -1,0 +1,41 @@
+{
+  "name": "onion",
+  "version": "0.1.0",
+  "description": "A canvas-based animation program",
+  "main": "src/index.js",
+  "scripts": {
+    "watch:scripts": "./node_modules/.bin/webpack --watch",
+    "watch:styles": "./node_modules/.bin/stylus -w ./src/styles/main.styl -o ./build/main.css",
+    "serve": "python -m SimpleHTTPServer 2048"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bildepunkt/onion.git"
+  },
+  "keywords": [
+    "animation",
+    "canvas",
+    "html5",
+    "onion-skin"
+  ],
+  "author": "Chris Peters <bildepunkt@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bildepunkt/onion/issues"
+  },
+  "homepage": "https://github.com/bildepunkt/onion#readme",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "stylus": "^0.54.5",
+    "webpack": "^2.2.1"
+  }
+}
