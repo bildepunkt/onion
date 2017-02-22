@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { triggerButton } from "../../actions/fileActions";
+import { toggleNewSceneModal } from "../actions/commonActions";
 
 class Toolbar extends React.Component {
   constructor (...args) {
@@ -10,7 +10,13 @@ class Toolbar extends React.Component {
   }
 
   onClick (e) {
-    this.props.dispatch(triggerButton(e.target.id.replace("toolbar-", "")));
+    const button = e.target.id.replace("toolbar-", "");
+    
+    switch (button) {
+      case "new":
+        this.props.dispatch(toggleNewSceneModal());
+        break;
+    }
   }
 
   render () {
@@ -26,12 +32,6 @@ class Toolbar extends React.Component {
   }
 }
 
-Toolbar.propTypes = {
-  file: React.PropTypes.object.isRequired
-};
-
-Toolbar = connect(state => ({
-  file: state.file
-}))(Toolbar);
+Toolbar = connect()(Toolbar);
 
 export default Toolbar;

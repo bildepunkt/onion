@@ -1,4 +1,4 @@
-import { actionTypes } from "../actions/fileActions";
+import { actionTypes } from "../actions/sceneActions";
 
 /**
  * @param {object} action - the action
@@ -6,11 +6,10 @@ import { actionTypes } from "../actions/fileActions";
  * @param {number} action.height - the document height
  */
 function init (action = {}) {
-  const state = new Map();
-  state.set("width", action.width);
-  state.set("height", action.height);
-
-  return state;
+  return {
+    width: action.width,
+    height: action.height
+  }
 }
 
 /**
