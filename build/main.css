@@ -1,14 +1,30 @@
 .toolbar {
+  align-items: center;
+  bottom: 48px;
+  display: flex;
   height: 48px;
-  margin-top: -48px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.toolbar li > a {
+  padding: 16px 12px;
 }
 .sidebar {
-  width: 128px;
-  min-height: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 256px;
+  top: 48px;
+  width: 256px;
 }
 .draw {
-  min-height: 100%;
-  width: 100%;
+  bottom: 0;
+  left: 256px;
+  position: absolute;
+  right: 0;
+  top: 48px;
 }
 html {
   height: 100%;
@@ -17,16 +33,16 @@ html body {
   height: 100%;
   margin: 0;
 }
+html body a {
+  cursor: pointer;
+}
 html body .onion {
   bottom: 0;
   left: 0;
-  padding-top: 48px;
   position: absolute;
   right: 0;
   top: 0;
 }
 html body .onion .columns {
-  display: flex;
-  flex-direction: rows;
   min-height: 100%;
 }

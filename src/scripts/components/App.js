@@ -1,7 +1,7 @@
 import React from "react";
-import Toolbar from "./toolbar";
-import Sidebar from "./sidebar";
-import Draw from "./draw";
+import Toolbar from "./toolbar/Toolbar.js";
+import Sidebar from "./sidebar/Sidebar.js";
+import Draw from "./draw/Draw.js";
 
 const App = () => (
   <div className="onion">

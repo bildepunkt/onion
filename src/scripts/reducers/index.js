@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-import toolbar from "./toolbar";
-import sidebar from "./sidebar";
-import draw from "./draw";
+import sidebar from "./sidebarReducers";
+import draw from "./drawReducers";
+import file from "./fileReducers";
 
 const todoApp = combineReducers({
-  toolbar,
   sidebar,
-  draw
+  draw,
+  file
 });
 
 export default todoApp;
