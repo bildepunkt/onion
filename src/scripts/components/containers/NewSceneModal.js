@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Modal from "../common/Modal";
 import { toggleNewSceneModal } from "../../actions/commonActions";
-import { newScene } from "../../actions/sceneActions";
 import { newSettings } from "../../actions/settingsActions";
 
 class NewSceneModal extends Component {
@@ -15,7 +14,6 @@ class NewSceneModal extends Component {
 
   onConfirm () {
     this.props.dispatch(toggleNewSceneModal());
-    this.props.dispatch(newScene());
     this.props.dispatch(newSettings({
       width: parseInt(this.refs.widthInput.value, 10),
       height: parseInt(this.refs.heightInput.value, 10),
@@ -32,17 +30,17 @@ class NewSceneModal extends Component {
       <Modal
         open={this.props.common.newSceneModalOpen}
         onOverlayClick={this.onToggle}>
-        <form onSubmit={this.onConfirm}>
+        <div>
           <div className="settings">
-            <label>width<input type="text" ref="widthInput" placeholder="640" /></label>
-            <label>height<input type="text" ref="heightInput" placeholder="480" /></label>
+            <label>width<input type="text" ref="widthInput" placeholder="800" /></label>
+            <label>height<input type="text" ref="heightInput" placeholder="600" /></label>
             <label>background<input type="text" ref="backgroundInput" placeholder="white" /></label>
           </div>
           <div className="confirm">
-            <input type="submit" value="confirm" onClick={this.onConfirm} />
+            <button onClick={this.onConfirm}>confirm</button>
             <button onClick={this.onToggle}>cancel</button>
           </div>
-        </form>
+        </div>
       </Modal>
     );
   }

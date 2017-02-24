@@ -1,11 +1,11 @@
 export const actionTypes = Object.freeze({
-  NEW_SCENE: "NEW_SCENE",
-  SET_CANVAS_HAS_INITIALIZED: "SET_CANVAS_HAS_INITIALIZED"
+  UPDATE_CANVAS_STYLE: "UPDATE_CANVAS_STYLE"
 });
 
-export const newScene = () => ({ type: actionTypes.NEW_SCENE });
-
-export const setCanvasHasInitialized = (hasInitialized) => ({
-    type: actionTypes.SET_CANVAS_HAS_INITIALIZED,
-    hasInitialized
+/**
+ * @param {object} style - the React style object
+ */
+export const updateCanvasStyle = (style) => ({
+  type: actionTypes.UPDATE_CANVAS_STYLE,
+  style
 });

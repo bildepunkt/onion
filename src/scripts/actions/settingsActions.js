@@ -3,7 +3,7 @@ export const actionTypes = Object.freeze({
 });
 
 /**
- * @param {boolean} settings - the new scene settings
+ * @param {object} settings - the settings object
  */
 export const newSettings = (settings) => ({
   type: actionTypes.NEW_SETTINGS,

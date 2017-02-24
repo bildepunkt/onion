@@ -1,22 +1,25 @@
 import { actionTypes } from "../actions/settingsActions";
 
-const sceneDefaults = {
-  width: 640,
-  height: 480,
-  background: "white"
-};
+const defaults = {
+  width: 800,
+  height: 600,
+  background: "#ddd",
+  stack: []
+}
 
-/**
- * @param {object} [settings = sceneDefaults] - the scene settings
- * @param {number} settings.width - the scene width
- * @param {number} settings.height - the scene height
- * @param {number} settings.background - the scene background color
- */
-function init (settings = sceneDefaults) {
+function init (action = defaults) {
+  const width = action.width || defaults.width;
+  const height = action.height || defaults.height;
+
   return {
-    width: settings.width || sceneDefaults.width,
-    height: settings.height || sceneDefaults.height,
-    background: settings.background || sceneDefaults.background
+    width,
+    height,
+    stack: [
+      [
+        { key: "fillStyle", val: action.background || defaults.background },
+        { fn: "fillRect", args: [0, 0, width, height] }
+      ]
+    ]
   }
 }
 

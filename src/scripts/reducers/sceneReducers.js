@@ -1,31 +1,26 @@
-import { actionTypes } from "../actions/settingsActions";
+import { actionTypes } from "../actions/sceneActions";
 
-function init () {
-  return {
-    canvasHasInitialized: false
-  }
-}
+export const initialState = {
+  style: {}
+};
 
 /**
- * @param {object} state - the state
- * @param {object} action - the action
- * @param {boolean} action.hasInitialized - whether the canvas has been resized initially
+ * @param {object} state  - [description]
+ * @param {object} action - [description]
  */
-function setCanvasHasInitialized (state, action) {
+function updateCanvasStyle (state, action) {
   return Object.assign({}, state, {
-    canvasHasInitialized: action.hasInitialized
+    style: Object.assign(state.style, action.style)
   });
 }
 
-const settings = (state = init(), action) => {
+const scene = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.NEW_SCENE:
-      return init();
-    case actionTypes.SET_CANVAS_HAS_INITIALIZED:
-      return setCanvasHasInitialized(state, action);
+    case actionTypes.UPDATE_CANVAS_STYLE:
+      return updateCanvasStyle(state, action);
     default:
       return state;
   }
 };
 
-export default settings;
+export default scene;
