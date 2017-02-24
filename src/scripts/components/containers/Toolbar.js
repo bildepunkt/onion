@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { toggleNewSceneModal } from "../actions/commonActions";
+import { toggleNewSceneModal } from "../../actions/commonActions";
 
 class Toolbar extends React.Component {
   constructor (...args) {

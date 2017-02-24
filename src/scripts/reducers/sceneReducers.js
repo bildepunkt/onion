@@ -1,34 +1,31 @@
-import { actionTypes } from "../actions/sceneActions";
+import { actionTypes } from "../actions/settingsActions";
 
-/**
- * @param {object} action - the action
- * @param {number} action.width - the document width
- * @param {number} action.height - the document height
- */
-function init (action = {}) {
+function init () {
   return {
-    width: action.width,
-    height: action.height
+    canvasHasInitialized: false
   }
 }
 
 /**
- * @param {Map} state - the state
+ * @param {object} state - the state
  * @param {object} action - the action
+ * @param {boolean} action.hasInitialized - whether the canvas has been resized initially
  */
-function triggerButton (state, action) {
-  return state;
+function setCanvasHasInitialized (state, action) {
+  return Object.assign({}, state, {
+    canvasHasInitialized: action.hasInitialized
+  });
 }
 
-const toolbar = (state = init(), action) => {
+const settings = (state = init(), action) => {
   switch (action.type) {
-    case actionTypes.INIT:
-      return init(action);
-    case actionTypes.TRIGGER_BUTTON:
-      return triggerButton(state, action);
+    case actionTypes.NEW_SCENE:
+      return init();
+    case actionTypes.SET_CANVAS_HAS_INITIALIZED:
+      return setCanvasHasInitialized(state, action);
     default:
       return state;
   }
 };
 
-export default toolbar;
+export default settings;

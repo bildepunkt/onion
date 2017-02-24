@@ -1,22 +1,21 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { Component } from "react";
 
-class Modal extends React.Component {
+class Modal extends Component {
   constructor (...args) {
     super(...args);
 
     Modal.prototype.onOverlayClick = Modal.prototype.onOverlayClick.bind(this);
   }
 
-  onOverlayClick () {
+  onOverlayClick (e) {
     if (this.props.onOverlayClick) {
-      this.props.onOverlayClick();
+      this.props.onOverlayClick(e);
     }
   }
 
   render () {
     const { open } = this.props;
-    
+
     return open
       ? (
         <div className="common-modal">

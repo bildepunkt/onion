@@ -1,4 +1,4 @@
-export function fitToWindow (elWidth, elHeight, winWidth, winHeight) {
+export function stretchToFit (elWidth, elHeight, winWidth, winHeight) {
     const LANDSCAPE_RATIO = elHeight / elWidth;
     const PORTRAIT_RATIO  = elWidth / elHeight;
     const IS_LANDSCAPE    = LANDSCAPE_RATIO < PORTRAIT_RATIO ? true : false;
